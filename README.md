@@ -1,4 +1,4 @@
-# ImageAssorting
+# Image Assorting
 
 ## Installing
 1. Clone repository
@@ -14,14 +14,17 @@ cd ./ImageAssorting.git
 To train the model, run:
 
 ```cmd
-python3 ./train/train.py
+python3 ./train/train.py -e <epoch> -t <target> -f <file>
 ```
+
+> `<epoch>` replace with the steps you want to train, `<target>` replace with the target correct rate, `<file>` replace with the file name.
 
 ## Usage
 
 To run the model, run:
 
 ```cmd
-python3 ./run_model.py
+python3 ./run_model.py -f <file>
 ```
 
+> `<file>` replace your model file name.

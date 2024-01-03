@@ -3,9 +3,17 @@ from train.dataset import test_data
 
 import torch
 import matplotlib.pyplot as plt
+import argparse
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-f', '--file', help='model file name')
+    return parser.parse_args()
+
+args = parse_args
 
 model = NeuralNetwork().to(device)
-model.load_state_dict(torch.load("models/model.pth"))
+model.load_state_dict(torch.load(f"models/{args.file}.pth"))
 
 classes = [
     "T-shirt/top",

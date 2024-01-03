@@ -1,8 +1,16 @@
 import torch
 from torch import nn
+import argparse
 
 from model import device, model
 from dataloader import train_dataloader, test_dataloader
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-e', '--epoch')
+    parser.add_argument('-t', '--target', help='target correct')
+    parser.add_argument('-f', '--file', help='file name')
+    return parser.parse_args()
 
 def train(dataloader, model, loss_fn, optimizer):
     size = len(dataloader.dataset)
@@ -40,15 +48,19 @@ def test(dataloader, model, loss_fn):
 
     return correct, test_loss
 
+args = parse_args()
+
 loss_fn = nn.CrossEntropyLoss()
 optimizer = torch.optim.SGD(model.parameters(), lr=1e-3)
 
-epochs = 5
-for t in range(epochs):
+for t in range(int(args.epoch)):
     print(f"Epoch {t+1}\n-------------------------------")
     train(train_dataloader, model, loss_fn, optimizer)
-    test(test_dataloader, model, loss_fn)
+
+    correct, test_loss = test(test_dataloader, model, loss_fn)
+    if args.target != None and correct >= args.target:
+        break
 print("Done!")
 
-torch.save(model.state_dict(), "models/model.pth")
-print("Saved PyTorch Model State to model.pth")
+torch.save(model.state_dict(), f"models/{args.file}.pth")
+print(f"Saved PyTorch Model State to models/{args.file}.pth")
