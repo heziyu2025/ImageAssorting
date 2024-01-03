@@ -8,9 +8,10 @@ import argparse
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument('-f', '--file', help='model file name')
+    parser.add_argument('-i', '--index', help='the index of the image')
     return parser.parse_args()
 
-args = parse_args
+args = parse_args()
 
 model = NeuralNetwork().to(device)
 model.load_state_dict(torch.load(f"models/{args.file}.pth"))
@@ -28,10 +29,8 @@ classes = [
     "Ankle boot",
 ]
 
-index = 3
-
 model.eval()
-x, y = test_data[index][0], test_data[index][1]
+x, y = test_data[int(args.index)][0], test_data[int(args.index)][1]
 
 with torch.no_grad():
     x = x.to(device)

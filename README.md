@@ -19,12 +19,14 @@ python3 ./train/train.py -e <epoch> -t <target> -f <file>
 
 > `<epoch>` replace with the steps you want to train, `<target>` replace with the target correct rate, `<file>` replace with the file name.
 
+You can change the dataset in `train/dataset.py`.
+
 ## Usage
 
 To run the model, run:
 
 ```cmd
-python3 ./run_model.py -f <file>
+python3 ./run_model.py -f <file> -i <index>
 ```
 
-> `<file>` replace your model file name.
+> `<file>` replace with your model file name, `<index>` replace with the index of the detaset image.
