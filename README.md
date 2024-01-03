@@ -1,13 +1,18 @@
 # Image Assorting
 
 ## Installing
-1. Clone repository
+1. Clone repository by running:
 ```cmd
 git clone https://github.com/heziyu2025/ImageAssorting.git
 cd ./ImageAssorting
 ```
 2. Download and install [python](https://www.python.org/)
 3. Install [pytorch](https://pytorch.org/) (If you have a nvidia gpu, you can use [cuda](https://developer.nvidia.com/cuda-toolkit) for higher speed)
+4. Install packages from `requirements.txt` by running:
+
+```cmd
+pip install -r ./requirements.txt
+```
 
 ## Training
 
