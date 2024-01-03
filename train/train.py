@@ -4,8 +4,6 @@ from torch import nn
 from model import device, model
 from dataloader import train_dataloader, test_dataloader
 
-print(model)
-
 def train(dataloader, model, loss_fn, optimizer):
     size = len(dataloader.dataset)
     model.train()
