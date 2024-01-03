@@ -58,7 +58,7 @@ for t in range(int(args.epoch)):
     train(train_dataloader, model, loss_fn, optimizer)
 
     correct, test_loss = test(test_dataloader, model, loss_fn)
-    if args.target != None and correct >= args.target:
+    if args.target != None and correct >= float(args.target):
         break
 print("Done!")
 
