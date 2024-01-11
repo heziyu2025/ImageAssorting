@@ -1,5 +1,5 @@
-from train.model import NeuralNetwork, device
-from train.dataset import test_data
+from .model import NeuralNetwork, device
+from .datasets import test_data
 
 import torch
 import matplotlib.pyplot as plt

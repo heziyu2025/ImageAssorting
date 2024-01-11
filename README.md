@@ -42,7 +42,7 @@ To run the model, run:
 py ./run_model.py -f <file> -i <index>
 ```
 
-> `<file>` replace with your model file name, `<index>` replace with the index of the detaset image.
+> `<file>` replace with your model file name, `<index>` replace with the index of the dataset image.
 >
 > e.g.:
 >

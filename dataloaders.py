@@ -1,6 +1,6 @@
 from torch.utils.data import DataLoader
 
-from dataset import training_data, test_data
+from datasets import training_data, test_data
 
 batch_size = 64
 
