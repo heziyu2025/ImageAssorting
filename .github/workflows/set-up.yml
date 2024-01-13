@@ -20,5 +20,7 @@ jobs:
       # You can test your matrix by printing the current Python version
       - name: Display Python version
         run: python -c "import sys; print(sys.version)"
+
       - name: Install pytorch
-        run: pip install torch,torchvision
+        run: pip install --upgrade pip
+        run: pip install torch torchvision
