@@ -21,4 +21,4 @@ jobs:
       - name: Display Python version
         run: python -c "import sys; print(sys.version)"
       - name: Install pytorch
-        run: pip install pytorch
+        run: pip install torch, torchvision
